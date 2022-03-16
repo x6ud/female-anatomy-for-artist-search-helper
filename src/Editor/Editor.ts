@@ -81,6 +81,10 @@ export default defineComponent({
                 for (let i = 0, len = selected.length; i < len; ++i) {
                     try {
                         const id = selected[i].id;
+                        if (await dataset.has(id)) {
+                            console.log(`Skip existed #${id}`);
+                            continue;
+                        }
                         const result = new PhotoPoseLandmarks();
                         await result.load(id);
                         detectResult.value.push(result);
