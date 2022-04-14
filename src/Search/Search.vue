@@ -28,6 +28,22 @@
                     </n-button>
                 </div>
 
+                <div class="cols search-condition">
+                    <label>Gender</label>
+                    <div style="text-decoration: underline;">Female</div>
+                    <a href="https://x6ud.github.io/human-anatomy-for-artist-search-helper"
+                       target="_blank"
+                    >
+                        Male
+                    </a>
+                </div>
+
+                <div class="cols search-condition">
+                    <label>Type</label>
+                    <div style="text-decoration: underline;">Anatomy</div>
+                    <a href="https://x6ud.github.io/pose-search" target="_blank">Daily</a>
+                </div>
+
                 <div class="description">
                     <div>Wheel: Rotate Camera / Zoom</div>
                     <div>Mouse Right: Move Camera</div>
@@ -55,15 +71,6 @@
                         <a href="https://github.com/x6ud/female-anatomy-for-artist-search-helper" target="_blank">
                             Source code
                         </a>
-                    </div>
-                    <div>
-                        <a href="https://x6ud.github.io/human-anatomy-for-artist-search-helper" target="_blank">
-                            Male body art reference search
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://x6ud.github.io/pose-search" target="_blank">
-                            Another page for searching photos by pose</a>
                     </div>
                 </div>
             </div>
@@ -115,93 +122,105 @@
 
 <style lang="scss">
 .container {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  padding: 4px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 4px;
 }
 
 .rows {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-  & > *:not(:last-child) {
-    margin-bottom: 4px;
-  }
+    & > *:not(:last-child) {
+        margin-bottom: 4px;
+    }
 
-  & > .fill {
-    flex: 1 1;
-    min-height: 0;
-  }
+    & > .fill {
+        flex: 1 1;
+        min-height: 0;
+    }
 }
 
 .cols {
-  display: flex;
+    display: flex;
 
-  & > *:not(:last-child) {
-    margin-right: 4px;
-  }
+    & > *:not(:last-child) {
+        margin-right: 4px;
+    }
 
-  & > .fill {
-    flex: 1 1;
-    min-width: 0;
-  }
+    & > .fill {
+        flex: 1 1;
+        min-width: 0;
+    }
+}
+
+.search-condition {
+    font-size: 12px;
+    color: #989898;
+    line-height: 1.5em;
+
+    label {
+        width: 3.5em;
+        margin-right: .5em;
+        text-align: right;
+    }
 }
 
 .scroll-list {
-  position: relative;
-  border: solid 1px #d9d9d9;
-  border-radius: 2px;
-  overflow: auto;
-  padding: 4px;
+    position: relative;
+    border: solid 1px #d9d9d9;
+    border-radius: 2px;
+    overflow: auto;
+    padding: 4px;
 
-  .n-spin-container,
-  .n-spin-content {
-    width: 100%;
-    height: 100%;
-  }
+    .n-spin-container,
+    .n-spin-content {
+        width: 100%;
+        height: 100%;
+    }
 
-  .item {
-    float: left;
-    margin: 0 4px 4px;
-  }
+    .item {
+        float: left;
+        margin: 0 4px 4px;
+    }
 }
 
 .photo {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 200px;
-  height: 200px;
-  background: #f2f2f2;
-  user-select: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background: #f2f2f2;
+    user-select: none;
 
-  img {
-    max-width: 100%;
-    max-height: 100%;
-  }
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
 
-  .anchor {
-    position: absolute;
-    z-index: 2;
-  }
+    .anchor {
+        position: absolute;
+        z-index: 2;
+    }
 }
 
 a {
-  text-decoration: none;
-  font-size: inherit;
-  color: #1890ff;
-  white-space: nowrap;
+    text-decoration: none;
+    font-size: inherit;
+    color: #1890ff;
+    white-space: nowrap;
 
-  &:hover {
-    text-decoration: underline;
-  }
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .description {
-  color: #c2c2c2;
-  font-size: 12px;
-  line-height: 1.5em;
+    color: #c2c2c2;
+    font-size: 12px;
+    line-height: 1.5em;
 }
 </style>
