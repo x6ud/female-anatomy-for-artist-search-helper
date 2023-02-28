@@ -1,4 +1,4 @@
-import {WarningOutlined, SearchOutlined} from '@vicons/antd';
+import {SearchOutlined, WarningOutlined} from '@vicons/antd';
 import {NButton, NIcon, NSelect} from 'naive-ui';
 import {defineComponent, nextTick, onMounted, ref} from 'vue';
 import {BodyPart} from '../component/SkeletonModelCanvas/model/BodyPart';
@@ -86,6 +86,8 @@ export default defineComponent({
         const dataLoader = new DataLoader();
         const model = new SkeletonModel();
         const loadingData = ref(false);
+        const loadingProgress = ref(0);
+        const loadingTotal = ref(0);
         const photosNum = ref(0);
 
         const bodyPartOptions = Object.keys(matchers).map(option => ({value: option, label: option}));
@@ -98,6 +100,8 @@ export default defineComponent({
             try {
                 loadingData.value = true;
                 await dataLoader.load(function (progress, total) {
+                    loadingProgress.value = progress;
+                    loadingTotal.value = total;
                 });
                 photosNum.value = dataLoader.chunks
                     .reduce((sum, chunk) => sum + chunk.photos.length, 0);
@@ -124,6 +128,8 @@ export default defineComponent({
             model,
             matchers,
             loadingData,
+            loadingProgress,
+            loadingTotal,
             photosNum,
 
             bodyPartOptions,
