@@ -14,6 +14,7 @@ export class PhotoListPage {
 }
 
 export async function getPhotoListPage(page: number | string) {
+    throw new Error("This crawler is out of date and needs to be reworked")
     const url = `https://www.female-anatomy-for-artist.com/photos/search/query//thumb/small/standard/1/premium/1/category-11/Nude/category-29/Woman/category-102/Standard%20Photoshoot/page/${page}`;
     const html = await proxyGetText(url);
     const doc = parseHtml(html, url);
